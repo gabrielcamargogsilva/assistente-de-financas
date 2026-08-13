@@ -1,14 +1,14 @@
 # backend/app.py
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+import os
 import sys
 from pathlib import Path
 from dotenv import load_dotenv
-import os
+
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 load_dotenv()
-
 
 # Adiciona a pasta 'knowledge' ao sys.path
 knowledge_path = str(Path(__file__).parent / "knowledge")
@@ -19,9 +19,14 @@ from financas_crew.crew import FinancasCrew
 
 app = FastAPI(title="Assistente de Finanças AI API")
 
+# Leitura dinâmica e conversão para LISTA a partir do .env
+frontend_env = os.getenv("URL_FRONTEND", "")
+# Separa por vírgula se houver mais de uma URL e remove espaços/barras no final
+origins = [url.strip().rstrip("/") for url in frontend_env.split(",") if url.strip()]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.getenv("URL_FRONTEND")],  # Substitua pelo URL do seu frontend
+    allow_origins=origins,  # Passa estritamente a lista gerada do .env
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
