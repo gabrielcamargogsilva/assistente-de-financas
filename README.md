@@ -33,5 +33,25 @@ Onde procurar mais:
 - Código da crew: `knowledge/financas_crew/crew.py` e `knowledge/financas_crew/main.py`.
 - Definições e exemplos: `knowledge/financas_crew/config/`.
 
-Se quiser, posso também adicionar exemplos de endpoints, instruções de ambiente
-ou um guia passo a passo para rodar localmente — quer que eu adicione isso?
+Ferramentas e Tecnologias:
+- **Python**: Recomendado Python >= 3.10.
+- **FastAPI**: framework web para construir a API (ASGI).
+- **Uvicorn**: servidor ASGI leve para rodar a aplicação FastAPI.
+- **CrewAI**: framework de agentes usado para orquestrar os agentes e tarefas.
+- **Pydantic**: validação e parsing de modelos (usado com FastAPI/CrewAI).
+- **UV**: gerenciador de dependências (projeto contém `pyproject.toml`).
+- **Docker** (opcional): empacotamento e deploy em contêineres.
+- **Git**: controle de versão.
+
+
+
+## Acesse o projeto front end
+- [FinancasCrew — Front end (GitHub)](https://github.com/gabrielcamargo/financascrew)
+- [FinancasCrew — Front end (deploy)](https://financascrew.vercel.app/)
+
+## Autor 
+ **Gabriel Camargo Gonçalves Silva**
+ - [LinkedIn](https://www.linkedin.com/in/gabriel-camargo-dev/) | [Email](gabrielcamargogsilva@gmail.com)
+ 
+## Licença
+Este repositório (parte `back end`) está licenciado sob a Licença MIT — veja o arquivo [LICENSE](LICENSE) para os termos completos.
