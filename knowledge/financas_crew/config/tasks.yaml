@@ -1,0 +1,36 @@
+tarefa_categorizacao:
+  description: >
+    Analise o seguinte texto bruto com os gastos do usuário:
+    ---
+    {gastos_brutos}
+    ---
+    
+    1. Identifique cada item e seu valor em Reais (R$).
+    2. Agrupe os itens por categoria (Alimentação, Moradia, Lazer, Transporte, Assinaturas, Saúde, Outros).
+    3. Calcule o valor total geral gasto.
+  expected_output: >
+    Uma lista organizada e formatada contendo todos os itens agrupados por suas respectivas categorias, com o total parcial de cada categoria e o total geral.
+  agent: categorizador_financeiro
+
+tarefa_analise_orcamento:
+  description: >
+    Com base no relatório categorizado fornecido pela etapa anterior:
+    
+    1. Identifique as 3 maiores categorias de gastos em valor total e em porcentagem do total geral.
+    2. Destaque pequenos gastos repetitivos que somam um valor alto no final do mês (ex: pequenos cafés, aplicativos, assinaturas).
+    3. Identifique onde está o maior gargalo financeiro do usuário.
+  expected_output: >
+    Um diagnóstico resumido do orçamento destacando os pontos de atenção, vilões do orçamento e percentual de distribuição dos gastos.
+  agent: analista_orcamento
+
+tarefa_plano_economia:
+  description: >
+    Com base na análise de orçamento e nos gastos categorizados:
+    
+    1. Escreva um relatório em Markdown bem estruturado e amigável.
+    2. Crie uma seção com "3 Ações Práticas de Economia para o Próximo Mês".
+    3. Defina uma meta realista de economia em Reais para o próximo mês.
+    4. Adicione uma tabela resumida no final com os dados.
+  expected_output: >
+    Um relatório final completo em Markdown contendo diagnóstico, dicas práticas e plano de ação.
+  agent: consultor_economia
