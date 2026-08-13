@@ -46,8 +46,8 @@ Ferramentas e Tecnologias:
 
 
 ## Acesse o projeto front end
-- [FinancasCrew — Front end (GitHub)](https://github.com/gabrielcamargo/financascrew)
-- [FinancasCrew — Front end (deploy)](https://financascrew.vercel.app/)
+- [FinancasCrew — Front end (GitHub)](https://github.com/gabrielcamargogsilva/assistente-de-financas-front-end.git)
+- [FinancasCrew — Front end (deploy)](https://assistente-de-financas.vercel.app/)
 
 ## Autor 
  **Gabriel Camargo Gonçalves Silva**
