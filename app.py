@@ -4,6 +4,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # Adiciona a pasta 'knowledge' ao sys.path
 knowledge_path = str(Path(__file__).parent / "knowledge")
@@ -16,7 +20,7 @@ app = FastAPI(title="Assistente de Finanças AI API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["URL do frontend"],  # Substitua pelo URL do seu frontend
+    allow_origins=[os.getenv("URL_FRONTEND")],  # Substitua pelo URL do seu frontend
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
